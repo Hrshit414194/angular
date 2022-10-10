@@ -1,0 +1,38 @@
+<p></p>
+<html>
+    <p></p>
+ 
+<body class="bg">
+<div class="container">
+    <div class="logo">post event </div>
+    <div class="register-item">
+      <form #myform="ngForm" (ngSubmit)="post()" class="form form-register">
+
+        <div class="form-field">
+              <label class="user" for="EventName"><span class="">Name</span></label>
+              <input name="EventName" id="EventName" type="text" class="form-input" placeholder="Name" required [(ngModel)]="newevent.eventName">
+        </div>
+       
+
+        <div class="form-field">
+          <label class="text" for="eventBody"><span class="">eventBody</span></label>
+          <input name="eventBody" id="eventBody" type="text" class="form-input" placeholder="About Event" required [(ngModel)]="newevent.eventBody">
+        </div>
+        <div class="form-field">
+            <label class="text" for="eventLocation"><span class="">eventLocation</span></label>
+            <input name="eventBody" id="eventLocation" type="text" class="form-input" placeholder="event Location" required [(ngModel)]="newevent.eventLocation">
+          </div>
+
+
+        <div class="form-field">
+          <input type="submit" value="post">
+         
+        </div>
+      </form>
+      <button type="button" class="btn btn-danger" onclick="timeline()">checkout timeline</button>
+
+    </div>
+</div>
+</body>
+</html>
+<router-outlet></router-outlet>
