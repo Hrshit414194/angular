@@ -2,17 +2,21 @@
 <table class="table align-middle mb-0 bg-white">
     <thead class="bg-light">
       <tr>
+        <th>event id</th>
         <th>Posted By</th>
         <th>Event Name</th>
         <th>About</th>
         <th>Location</th>
         
         <th>departments Allowed</th>
+        <th>post Comments</th>
+        <th>view Comments</th>
       </tr>
+
     </thead>
     <tbody>
         <tr *ngFor="let p of d">
-
+<td><a [routerLink]="['/viewevent',p.eventId]">{{p.eventId}}</a></td>
         <td>
           <div class="d-flex align-items-center">
             <img
@@ -37,6 +41,35 @@
         <td>
             <span class="badge badge-success rounded-pill d-inline">{{p.departmentsAllowed}}</span>
 
+        </td>
+        <td>
+<button (click)="addComment(p.eventId)">Add Comment</button>
+<div *ngIf = "todisplay" >
+  <div *ngIf = "checker==p.eventId">
+<form action="/html/tags/html_form_tag_action.cfm" method="post">
+  <input name="comment" id="comment" type="text" class="form-input" placeholder="post comment" required [(ngModel)]="commnet.comment">
+
+  <button (click)="postcomment(p.eventId)">post</button>
+  </form>
+</div>
+</div>
+        </td>
+        <td>
+          <button (click)="getcomments(p.eventId)">view comments</button>
+<div *ngIf="listofcomments">
+<table *ngIf="checker2==p.eventId">
+  <tr>
+    <th>commented by</th>
+    <th>==</th>
+    <th>comment body</th>
+  </tr>
+  <tr *ngFor="let c of listofcomments">
+<td>{{c.user.emailId}}</td>
+<td>==></td>
+<td>{{c.comment}}</td>
+  </tr>
+</table>
+</div>
         </td>
       </tr>
       

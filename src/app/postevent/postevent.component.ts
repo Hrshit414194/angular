@@ -19,13 +19,13 @@ dep:Department;
 
   ngOnInit(): void {
     this.newevent=new event();
-this.user=new User();
-this.user.emailId="saiteja@gmail.com";
-this.user.familyName="konidela";
-this.user.givenName="saiteja";
-this.newevent.postedByUser=this.user;
+//this.user=new User();
+//this.user.emailId="saiteja@gmail.com";
+//this.user.familyName="konidela";
+//this.user.givenName="saiteja";
+//this.newevent.postedByUser=this.user;
 this.dep=new Department();
-this.dep.DepartmentId=123;
+//this.dep.DepartmentId=111;
 this.dep.departmentName="cse";
 this.newevent.departmentsAllowed=[this.dep];
 

@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PosteventComponent } from './postevent/postevent.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TimelineComponent } from './timeline/timeline.component';
+import { AuthRoutingModule } from './auth-routing.module';
+import { ViewEventComponent } from './timeline/view-event.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { TimelineComponent } from './timeline/timeline.component';
     HeaderComponent,
     FooterComponent,
     PosteventComponent,
-    TimelineComponent
+    TimelineComponent,
+    ViewEventComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

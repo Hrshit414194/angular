@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { event } from 'src/event';
+import { comment } from './timeline/comment';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +21,16 @@ getAllDepts():Observable<any>{
 getAllEvents():Observable<any>{
   return this.http.get<any>("http://localhost:8080/api/public/getEvents");
 }
-
+saveUser():Observable<any>{
+  return this.http.get<any>("http://localhost:8080/api/saveuser");
+}
+postcomment(c:comment,eventid:Number):Observable<any>{
+return this.http.post<any>(`http://localhost:8080/api/public/postComment/${eventid}`,c);
+}
+getComments(eventid:Number):Observable<any>{
+  return this.http.get<any>(`http://localhost:8080/api/getComments/${eventid}`);
+}
+getEventById(eventid:Number):Observable<any>{
+  return this.http.get<any>(`http://localhost:8080/api/getEventById/${eventid}`);
+}
 }
