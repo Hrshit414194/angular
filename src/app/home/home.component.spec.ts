@@ -10,7 +10,7 @@ describe('HomeComponent', () => {
   const config = {
     issuer: 'https://not-real.okta.com',
     clientId: 'fake-client-id',
-    redirectUri: 'http://localhost:4200'
+    redirectUri: 'https://eventmanagerangular.s3.us-west-2.amazonaws.com/'
   };
   const oktaAuth = new OktaAuth(config);
 

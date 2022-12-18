@@ -1,0 +1,32 @@
+
+<html>
+    
+ 
+<body class="bg">
+<div class="container">
+    <div class="logo">Publish Poll </div>
+    <div class="register-item">
+      <form #myform="ngForm" (ngSubmit)="post()" class="form form-register">
+
+        <div class="form-field">
+              <label class="user" for="pollName"><span class="">Enter Poll Name</span></label>
+              <input name="pollName" id="pollName" type="text" class="form-input" placeholder="Name" required [(ngModel)]="poll.pollName">
+        </div>
+       
+
+        <div class="form-field">
+          <label class="text" for="Statement"><span class="">Enter Statement to get Responses</span></label>
+          <input name="eventBody" id="Statement" type="text" class="form-input" placeholder="Statement" required [(ngModel)]="poll.Statement">
+        </div>
+   
+
+        <div class="form-field">
+          <input type="submit" value="post">
+         
+        </div>
+      </form>
+
+    </div>
+</div>
+</body>
+</html>

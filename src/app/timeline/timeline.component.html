@@ -16,10 +16,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let p of d">
+          
 <td><a [routerLink]="['/viewevent',p.eventId]">{{p.eventId}}</a></td>
         <td>
           <div class="d-flex align-items-center">
-            <img
+            <img 
                 src="https://static.toiimg.com/photo/msid-83688238/83688238.jpg"
                 alt=""
                 style="width: 45px; height: 45px"

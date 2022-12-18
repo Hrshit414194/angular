@@ -1,0 +1,40 @@
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Initiated By.........................</th>
+        <th>Poll Name     ...........................</th>
+        <th>Statement      ......................    </th>
+        <th>UpVotes     ...........................</th> 
+        <th>Down Votes     ................  </th>
+        <th>Submit you response   .........................   </th>
+      </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of polls">
+            <td>
+                {{p.postedBy.emailId}} 
+              </td>    
+<td>
+    {{p.pollName}}       
+</td>
+        
+        <td>
+         {{p.pollStatement}}
+        </td>
+        <td>
+          {{p.upVoteCount}}
+        </td>
+        <td>
+            {{p.downVoteCount}}
+        </td>
+       
+        
+            <td><a [routerLink]="['/SubmitYourResponse',p.pollId]">Respond</a></td>
+
+        
+
+   
+      
+    </tbody>
+  </table>

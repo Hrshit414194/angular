@@ -5,6 +5,8 @@ import { OKTA_AUTH, OktaAuthStateService } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 import { User } from 'src/User';
 import { comment } from './comment';
+import { poll } from '../post-poll/poll';
+
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
@@ -21,14 +23,32 @@ checker:Number;
 checker2:Number;
 todisplaycomments:Boolean=false;
 commnet:comment=new comment();
+listOfPolls:poll[]=[];
+arr:string[]=new Array();
+ getRamdomElement:any;
+a:any;
+
   constructor(public ser:EventserService) { }
 
   ngOnInit(): void {
-    
-   
+    this.getClaims();
+
+
+    this.arr.push("https://static.toiimg.com/photo/msid-83688238/83688238.jpg");
+    this.arr.push("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaqfmM-TwUWsOXtGei07TYMnFM0H7XodYe1w&usqp=CAU");
+    this.arr.push("https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/ram-charan-teja-1046368-19-09-2017-02-37-43.jpg");
+    //this.arr=new this.arr();
+   //this.connect();
+
+
+
     this.ser.getAllEvents().subscribe(data=>{
       this.d=data;
       
+      console.log(data);
+    });
+    this.ser.getAllPolls().subscribe(data=>{
+      this.listOfPolls=data;
       console.log(data);
     })
   }
@@ -42,6 +62,7 @@ postcomment(eid:Number){
 this.ser.postcomment(this.commnet,eid).subscribe(
   data=>{
     console.log(data);
+    this.commnet.comment="";
   }
 );
 }
@@ -55,5 +76,19 @@ this.checker2=id;
     }
   )
 }
+getRandonImage():string{
+  this.a =this.arr[Math.floor(Math.random() * this.arr.length)] ;
+return this.a;
+}
+getClaims(){
+  this.ser.getClaims().subscribe(
+    data=>{
+      console.log(data);
+    }
+  )
+}
 
 }
+
+
+

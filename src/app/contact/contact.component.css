@@ -15,13 +15,13 @@ html, body{background: rgb(236, 240, 241);}
   padding: 100px 0;
 }
   h1{
-    color: rgb(197, 33, 33);
+    color: #111;
     font-size: 3em;
     font-weight: 900;
     padding: 0 0 20px 0;
   }
   h2{
-    color: rgb(157, 33, 33);
+    color: #111;
     font-size: 2em;
     font-weight: 900;
     padding: 0 0 15px 0;
@@ -34,13 +34,13 @@ html, body{background: rgb(236, 240, 241);}
 .fixed_footer{
   width: 100%;
   height: 100px;
-  background: rgb(153, 123, 123);
+  background: #111;
   position: fixed; left: 0; bottom: 0;
   z-index: -100;
 }
    .fixed_footer p{
-    color: #e6c4c4;
-    column-count: 2;
+    color: #696969;
+    column-count: 1;
     column-gap: 50px;
     font-size: 1em;
     font-weight: 300;
